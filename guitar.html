@@ -15,6 +15,7 @@
     <style>
         body {
             margin: 0;
+            overflow: auto;  /* allow scrolling */
             background: url("guitar.png") no-repeat center top;
             background-size: cover;
             font-family: 'Glacial Indifference', sans-serif;
@@ -57,9 +58,9 @@
             display: block; 
             background-color: #FFDE59; 
             width: 60%;
-            height: 350px; /* fixed height */
-            overflow-y: auto; /* allow scrolling inside box */
-            padding: 60px; /* reduce padding to fit content */
+            height: 300px; /* slightly shorter */
+            overflow-y: auto; /* scroll if needed */
+            padding: 60px;
             border-radius: 80px;
             border: 15px solid black;
             top:370px;
@@ -71,19 +72,19 @@
 
         .category-title {
             color: #5e17eb; /* updated color */
-            font-weight: bold;
-            font-size: 26px; /* slightly smaller */
+            font-weight: bold; /* bold */
+            font-size: 28px; /* slightly bigger */
             margin-bottom: 5px;
         }
 
         .club-description {
-            font-size: 22px; /* smaller */
+            font-size: 22px;
             margin-bottom: 20px;
             color: #000000; /* black */
         }
 
         .club-time, .club-location {
-            font-size: 20px; /* smaller */
+            font-size: 20px;
             margin-bottom: 10px;
             color: #000000; /* black */
         }
@@ -168,6 +169,7 @@ def show_club_info(e=None):
 
 </body>
 </html>
+
 
 
 
