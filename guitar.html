@@ -58,12 +58,31 @@
             display: block; 
             background-color: #FFDE59; 
             width: 60%;
-            padding: 140px;
+            padding: 80px;
             border-radius: 80px;
             border: 15px solid black;
             top:370px;
             left:200px;
             position:absolute;
+            font-family: 'Glacial Indifference', sans-serif;
+            color: #1C1C1C;
+        }
+
+        .category-title {
+            color: #FF5733;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .club-description {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .club-time, .club-location {
+            font-size: 26px;
+            margin-bottom: 10px;
         }
 
         #guitar-title {
@@ -94,9 +113,9 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="navbar-nav">
-            <a class="nav-link" href="home.html">Home</a>
-            <a class="nav-link" href="index.html">Grade Calculator</a>
-            <a class="nav-link" href="clubs.html">Club</a>
+            <a class="nav-link" href="">Home</a>
+            <a class="nav-link" href="">Grade Calculator</a>
+            <a class="nav-link" href="">Club</a>
         </div>
     </nav>
 
@@ -106,14 +125,16 @@
 
     <div id="show-info-btn" py-click="show_club_info">Slide and strum!</div>
 
-    <div id="club-info-container"></div>
+    <div id="club-info-container">
+        <div class="club-description"></div>
+        <div class="club-time"></div>
+        <div class="club-location"></div>
+    </div>
 
     <py-script src="main1.py"></py-script>
 
 </body>
 </html>
-
-
 
 
 
