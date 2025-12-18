@@ -1,28 +1,38 @@
-from pyscript import display, document
+from pyscript import Element
 
-# Guitar Club Information
-guitar_club_info = {
-    "description": "A friendly space to jam and learn new chords!",
-    "time": "Every Monday, 2:00 to 3:00 PM",
-    "location": "Room 221"
-}
+def show_club_info():
+    box = Element("club-info-container").element
 
-# Function to populate and display the Guitar Club info
-def populateClubInfo():
-    # Prepare content for the yellow box
-    content = f"""
-    <div style="font-size: 20px; color: black;">
-        <p style="font-weight: bold; color: #5D16B5;"><strong>Description:</strong> {guitar_club_info['description']}</p>
-        <p style="font-weight: bold; color: #5D16B5;"><strong>Time:</strong> {guitar_club_info['time']}</p>
-        <p style="font-weight: bold; color: #5D16B5;"><strong>Location:</strong> {guitar_club_info['location']}</p>
+    box.innerHTML = """
+    <div style="display:flex; font-family:Glacial Indifference, sans-serif;">
+
+        <div style="width:50%;">
+            <div style="color:#6a00ff; font-size:36px; font-weight:bold;">
+                Description:
+            </div>
+            <div style="font-size:38px; font-weight:bold;">
+                A friendly space<br>
+                to jam and learn<br>
+                new chords!
+            </div>
+        </div>
+
+        <div style="width:50%;">
+            <div style="color:#6a00ff; font-size:32px; font-weight:bold;">
+                Time:
+            </div>
+            <div style="font-size:32px; font-weight:bold;">
+                Every Monday,<br>
+                2:00 to 3:00 PM
+            </div>
+
+            <div style="color:#6a00ff; font-size:32px; font-weight:bold; margin-top:20px;">
+                Location:
+            </div>
+            <div style="font-size:32px; font-weight:bold;">
+                Room 221
+            </div>
+        </div>
+
     </div>
-    <a href="#" class="btn" style="background-color: #ffde59; color: black; padding: 12px 25px; font-weight: bold; font-size: 18px; text-decoration: none; border-radius: 5px; display: block; margin-top: 15px; text-align: center;">
-        Join the Club
-    </a>
     """
-
-    # Insert the content into the yellow box
-    document.getElementById("club-info-container").innerHTML = content
-
-# Call the function to populate and display the content when the page loads
-populateClubInfo()
