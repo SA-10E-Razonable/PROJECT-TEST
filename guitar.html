@@ -15,7 +15,7 @@
     <style>
         body {
             margin: 0;
-            overflow: hidden;
+            overflow: auto;  /* changed from hidden to auto to allow scrolling */
             background: url("guitar.png") no-repeat center top;
             background-size: cover;
             font-family: 'Glacial Indifference', sans-serif;
@@ -140,7 +140,7 @@ club_info = {
 @when("click", "#show-info-btn")
 def show_club_info(e=None):
     container = document.getElementById("club-info-container")
-    container.innerHTML = ""
+    container.innerHTML = ""  # clear previous content
 
     info = club_info["guitar"]
 
@@ -166,15 +166,12 @@ def show_club_info(e=None):
             </div>
         </div>
     """
-    display(output, target="club-info-container")
+    container.innerHTML = output  # changed from display() to innerHTML
 </py-script>
 
 
 </body>
 </html>
-
-
-
 
 
 
