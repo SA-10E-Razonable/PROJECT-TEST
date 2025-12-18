@@ -1,4 +1,4 @@
-from pyscript import display, document
+from pyscript import display, document, when
 
 club_info = {
     "guitar": {
@@ -8,6 +8,7 @@ club_info = {
     }
 }
 
+@when("click", "#show-info-btn")
 def show_club_info(e=None):
     container = document.getElementById("club-info-container")
     container.innerHTML = ""
@@ -36,7 +37,7 @@ def show_club_info(e=None):
             </div>
         </div>
     """
-
     display(output, target="club-info-container")
+
 
 
