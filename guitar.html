@@ -15,7 +15,6 @@
     <style>
         body {
             margin: 0;
-            overflow: auto;  /* changed from hidden to auto to allow scrolling */
             background: url("guitar.png") no-repeat center top;
             background-size: cover;
             font-family: 'Glacial Indifference', sans-serif;
@@ -58,31 +57,35 @@
             display: block; 
             background-color: #FFDE59; 
             width: 60%;
-            padding: 140px;
+            height: 350px; /* fixed height */
+            overflow-y: auto; /* allow scrolling inside box */
+            padding: 60px; /* reduce padding to fit content */
             border-radius: 80px;
             border: 15px solid black;
             top:370px;
             left:200px;
             position:absolute;
             font-family: 'Glacial Indifference', sans-serif;
-            color: #1C1C1C;
+            color: #000000; /* default text color black */
         }
 
         .category-title {
-            color: #FF5733;
+            color: #5e17eb; /* updated color */
             font-weight: bold;
-            font-size: 32px;
+            font-size: 26px; /* slightly smaller */
             margin-bottom: 5px;
         }
 
         .club-description {
-            font-size: 28px;
+            font-size: 22px; /* smaller */
             margin-bottom: 20px;
+            color: #000000; /* black */
         }
 
         .club-time, .club-location {
-            font-size: 26px;
+            font-size: 20px; /* smaller */
             margin-bottom: 10px;
+            color: #000000; /* black */
         }
 
         #guitar-title {
@@ -123,11 +126,11 @@
     
     <div id="guitar-title">Guitar Club</div>
 
-   <div id="show-info-btn">Slide and strum!</div>
-<div id="club-info-container"></div>
+    <div id="show-info-btn">Slide and strum!</div>
+    <div id="club-info-container"></div>
 
 <py-script>
-from pyscript import display, document, when
+from pyscript import document, when
 
 club_info = {
     "guitar": {
@@ -147,37 +150,24 @@ def show_club_info(e=None):
     output = f"""
         <div class="row">
             <div class="col-md-6">
-                <div class="category-title" style="color:#FF5733;">Description:</div>
-                <div class="club-description" style="color:#1C1C1C;">
-                    {info['description']}
-                </div>
+                <div class="category-title">Description:</div>
+                <div class="club-description">{info['description']}</div>
             </div>
 
             <div class="col-md-6">
-                <div class="category-title" style="color:#FF5733;">Time:</div>
-                <div class="club-time" style="color:#1C1C1C;">
-                    {info['meeting_time']}
-                </div>
+                <div class="category-title">Time:</div>
+                <div class="club-time">{info['meeting_time']}</div>
 
-                <div class="category-title mt-3" style="color:#FF5733;">Location:</div>
-                <div class="club-location" style="color:#1C1C1C;">
-                    {info['location']}
-                </div>
+                <div class="category-title mt-3">Location:</div>
+                <div class="club-location">{info['location']}</div>
             </div>
         </div>
     """
-    container.innerHTML = output  # changed from display() to innerHTML
+    container.innerHTML = output
 </py-script>
-
 
 </body>
 </html>
-
-
-
-
-
-
 
 
 
